@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
 import WebhoseApp from "./WebhoseApp";
+import "./index.scss";
 
 ReactDOM.render(<WebhoseApp />, document.getElementById("root"));

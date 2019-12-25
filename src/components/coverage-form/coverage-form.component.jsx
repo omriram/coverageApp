@@ -82,7 +82,7 @@ class CoverageForm extends Component {
                     reason: this.state.reason,
                 }
               
-                fetch("http://127.0.0.1:3001/addRecord", {
+                fetch("https://coverage-api.herokuapp.com/addRecord", {
                     method: "post",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify(dataPack)

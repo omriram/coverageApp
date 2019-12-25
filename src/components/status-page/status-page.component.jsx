@@ -15,7 +15,7 @@ class StatusPage extends Component {
             email, 
             domain
         }
-        fetch("http://127.0.0.1:3001/deleteRecord", {
+        fetch("https://coverage-api.herokuapp.com/deleteRecord", {
             method: "post",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(dataPack)
@@ -26,7 +26,7 @@ class StatusPage extends Component {
     }
 
     componentDidMount() {
-        fetch("http://127.0.0.1:3001")
+        fetch("https://coverage-api.herokuapp.com")
         .then(res => res.json())
         .then(records => this.setState({records})); 
     }

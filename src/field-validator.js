@@ -12,7 +12,7 @@ class FieldValidator {
 
   static validateUniqueDomainPerEmail = (email = "", domain) => {
     return fetch(
-      `http://127.0.0.1:3001/checkEmailDomain?email=${email}&domain=${domain}`
+      `https://coverage-api.herokuapp.com/checkEmailDomain?email=${email}&domain=${domain}`
     )
       .then(res => res.json())
       .then(data => {
