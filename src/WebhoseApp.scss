@@ -1,0 +1,26 @@
+.webhose-app {
+    width: 100%;
+    padding: 3rem;
+
+    &__btn {
+        position: absolute;
+        top: 8rem;
+        left: 30rem;
+        font-family: inherit;
+        padding: 1rem;
+        box-shadow: 0 .2rem .5rem rgba(black, .2);
+        
+        &:hover {
+            transform: translateY(-2px);
+            background-color: #efe418;
+        }
+
+        
+        &:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+ 
+    }
+   
+}

@@ -1,0 +1,39 @@
+.record {
+    font-family: inherit;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 300px) 150px 200px 350px 50px;
+    grid-gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid white;
+    background-color: #cbd8e5;
+    border-radius: 3px;
+    &__col {
+        &--email {
+            
+        }
+        &--domain {
+
+        }
+        &--source-type {
+
+        }
+        &--source-country {
+
+        }
+        &--reason {
+
+        }
+    }
+}
+
+.topics {
+    background-color: #7197b4;
+    font-weight: 700;
+}
+.bright {
+    background-color: #c2daec;
+}
+.dark {
+    background-color: #49667c;
+}

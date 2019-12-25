@@ -1,0 +1,19 @@
+.notification {
+    position: absolute;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    &__email {
+        top: 24rem;
+        right: 22rem;
+
+    }
+
+    &__domain {
+        top: 34.2rem;
+        right: 22rem;
+    }
+
+    color: #fff700;
+    font-size: 1.25rem;
+}
