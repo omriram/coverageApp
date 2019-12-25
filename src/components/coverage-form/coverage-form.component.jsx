@@ -91,7 +91,8 @@ class CoverageForm extends Component {
                     this.setState({alertNewInsert: true,
                      emailNotification: "",
                      domainNotification: ""});
-                     });
+                     })
+                     .catch(err => console.log(err));
                    
            
         }
