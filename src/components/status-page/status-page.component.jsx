@@ -28,7 +28,8 @@ class StatusPage extends Component {
     componentDidMount() {
         fetch("http://127.0.0.1:3001")
         .then(res => res.json())
-        .then(records => this.setState({records})); 
+        .then(records => this.setState({records}))
+        .catch(err => console.log(err)); 
     }
     render() { 
         return (  

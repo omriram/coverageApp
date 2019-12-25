@@ -30,7 +30,8 @@ class WebhoseApp extends Component {
       .then(countriesObj => {
         Object.keys(countriesObj).map(key => countries.push(countriesObj[key]));
         this.setState({ citiesList: countries.sort(), showComponent: true });
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
