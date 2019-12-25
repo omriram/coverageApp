@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CoverageForm from "./components/coverage-form/coverage-form.component";
 import StatusPage from "./components/status-page/status-page.component";
+import { ReactComponent as Spinner } from "./assets/spinner.svg";
 import "./shared-styles.scss";
 import "./WebhoseApp.scss";
 
@@ -8,7 +9,9 @@ class WebhoseApp extends Component {
   constructor() {
     super();
     this.state = {
-      route: "requestForm"
+      route: "requestForm",
+      citiesList: [],
+      showComponent: false
     };
   }
 
@@ -20,11 +23,21 @@ class WebhoseApp extends Component {
     }
   };
 
+  componentDidMount() {
+    const countries = [];
+    fetch("https://cors-anywhere.herokuapp.com/https://webhose.io/names.json")
+      .then(response => response.json())
+      .then(countriesObj => {
+        Object.keys(countriesObj).map(key => countries.push(countriesObj[key]));
+        this.setState({ citiesList: countries.sort(), showComponent: true });
+      });
+  }
+
   render() {
     let btnLabel, pageComponent, heading;
     if (this.state.route === "requestForm") {
       btnLabel = "view status";
-      pageComponent = <CoverageForm />;
+      pageComponent = <CoverageForm citiesList={this.state.citiesList} />;
       heading = "request coverage form";
     } else {
       btnLabel = "request form";
@@ -41,7 +54,11 @@ class WebhoseApp extends Component {
           {btnLabel}
         </button>
         <h3 className="heading-primary">{heading}</h3>
-        {pageComponent}
+        {this.state.showComponent ? (
+          pageComponent
+        ) : (
+          <Spinner className="loading" />
+        )}
       </div>
     );
   }

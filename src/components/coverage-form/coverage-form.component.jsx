@@ -87,10 +87,12 @@ class CoverageForm extends Component {
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify(dataPack)
                 }).then(() => {      
+                    
                     this.setState({alertNewInsert: true,
                      emailNotification: "",
                      domainNotification: ""});
                      });
+                   
            
         }
 
@@ -116,16 +118,7 @@ class CoverageForm extends Component {
     }
 
     componentDidMount() {
-        const countries = [];
-        fetch("https://cors-anywhere.herokuapp.com/https://webhose.io/names.json")
-        .then(response => response.json())
-        .then(countriesObj => {
-           Object.keys(countriesObj).map(key => {
-            countries.push(countriesObj[key])
-           });
-           this.setState({citiesList: countries.sort()});
-        });
-
+        this.setState({citiesList: this.props.citiesList});
     }
 
     render() { 
